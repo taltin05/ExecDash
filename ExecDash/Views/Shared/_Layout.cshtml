@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="@Url.Content("~/")" />
+    <title>@ViewBag.Title - Executive Dashboard</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+ 
+</head>
+<body>
+    <div>       
+        @RenderBody()
+    </div>
+</body>
+@RenderSection("scripts", required: false)
+</html>

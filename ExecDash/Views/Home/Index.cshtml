@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; ;
+}
+
+@section Scripts
+{
+    <script>
+
+        window._appViewData = @Html.Raw(Json.Encode(Session["username"]));
+    </script>
+    <script type="text/javascript" src="~/dist/polyfills.bundle.js"></script>
+    <script type="text/javascript" src="~/dist/vendor.bundle.js"></script>
+    <script type="text/javascript" src="~/dist/app.bundle.js"></script>
+}
+
+<div>
+    <app-root>loading..</app-root>
+</div>
