@@ -1,0 +1,48 @@
+﻿<!--<select [(ngModel)]="selectedProperty" (ngModelChange)="onSelect($event)">
+    <option *ngFor="let property of properties" [ngValue]="property">{{property.name}}</option>
+</select>-->
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Please select a property
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a *ngFor="let property of properties" class="dropdown-item" (click)="onSelect(property)">
+             {{property.name}}
+        </a>
+    </div>
+</div>
+
+<div class="container">    
+    <br>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">Yardi</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu1">Procore</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu2">Sage</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="home" class="container tab-pane active">
+            <br>            
+            <app-property-detail [property]="selectedProperty"></app-property-detail>
+        </div>
+        <div id="menu1" class="container tab-pane fade">
+            <br>
+            <h3>Procore</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div id="menu2" class="container tab-pane fade">
+            <br>
+            <h3>Sage</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div>
+    </div>
+</div>

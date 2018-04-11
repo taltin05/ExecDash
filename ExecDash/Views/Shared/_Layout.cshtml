@@ -6,12 +6,14 @@
     <title>@ViewBag.Title - Executive Dashboard</title>
     <meta name="viewport" content="width=device-width" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
- 
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <div>       
+    <div>
         @RenderBody()
     </div>
 </body>
+
 @RenderSection("scripts", required: false)
 </html>

@@ -25,6 +25,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -163,6 +165,10 @@
   <ItemGroup>
     <Content Include="angular\src\app\app.component.css" />
     <Content Include="angular\src\app\app.component.html" />
+    <Content Include="angular\src\app\property-detail\property-detail.component.css" />
+    <Content Include="angular\src\app\property-detail\property-detail.component.html" />
+    <Content Include="angular\src\app\properties\properties.component.css" />
+    <Content Include="angular\src\app\properties\properties.component.html" />
     <Content Include="angular\src\app\index\index.component.css" />
     <Content Include="angular\src\app\index\index.component.html" />
     <Content Include="config\webpack.dev.js" />
@@ -286,6 +292,10 @@
     <TypeScriptCompile Include="angular\src\app\app.module.ts" />
     <TypeScriptCompile Include="angular\src\app\common\error-page\error-page.component.ts" />
     <TypeScriptCompile Include="angular\src\app\common\page-not-found\pagenotfound.component.ts" />
+    <TypeScriptCompile Include="angular\src\app\property-detail\property-detail.component.ts" />
+    <TypeScriptCompile Include="angular\src\app\properties\property.ts" />
+    <TypeScriptCompile Include="angular\src\app\properties\properties.component.ts" />
+    <TypeScriptCompile Include="angular\src\app\properties\mock-properties.ts" />
     <TypeScriptCompile Include="angular\src\app\index\index.component.ts" />
     <TypeScriptCompile Include="angular\src\main.ts" />
     <TypeScriptCompile Include="angular\src\polyfills.ts" />

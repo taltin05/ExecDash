@@ -7,21 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var IndexComponent = (function () {
+var IndexComponent = /** @class */ (function () {
     function IndexComponent() {
-        this.title = 'Index Page';
+        this.title = 'Executive Dashboard';
     }
     IndexComponent.prototype.ngOnInit = function () {
-        throw new Error('Method not implemented.');
+        //throw new Error('Method not implemented.');
     };
+    IndexComponent = __decorate([
+        core_1.Component({
+            selector: 'app-index',
+            templateUrl: './index.component.html',
+            styleUrls: ['./index.component.css']
+        })
+    ], IndexComponent);
     return IndexComponent;
 }());
-IndexComponent = __decorate([
-    core_1.Component({
-        selector: 'app-index',
-        templateUrl: './index.component.html',
-        styleUrls: ['./index.component.css']
-    })
-], IndexComponent);
 exports.IndexComponent = IndexComponent;
 //# sourceMappingURL=index.component.js.map

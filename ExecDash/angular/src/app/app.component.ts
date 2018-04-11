@@ -11,5 +11,5 @@ export class AppComponent implements OnInit {
         console.log('imhere');
     }
 
-    title = 'app';
+    title = 'Executive Dashboard Application';
 }

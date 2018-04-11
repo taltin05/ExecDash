@@ -17,18 +17,18 @@ var routes = [
     { path: 'ErrorPage', component: error_page_component_1.ErrorPageComponent },
     { path: '**', component: pagenotfound_component_1.PageNotFoundComponent }
 ];
-var AppRoutingModule = (function () {
+var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
+    AppRoutingModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                router_1.RouterModule.forRoot(routes)
+            ],
+            exports: [router_1.RouterModule]
+        })
+    ], AppRoutingModule);
     return AppRoutingModule;
 }());
-AppRoutingModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            router_1.RouterModule.forRoot(routes)
-        ],
-        exports: [router_1.RouterModule]
-    })
-], AppRoutingModule);
 exports.AppRoutingModule = AppRoutingModule;
 //# sourceMappingURL=app-routing.module.js.map
