@@ -23,5 +23,5 @@
 **/src/*.js.map
 **/src/**/*.js.map
 
-# Visual Studio cache/options directory
+# Visual Studio git cache/options directory
 .vs/
