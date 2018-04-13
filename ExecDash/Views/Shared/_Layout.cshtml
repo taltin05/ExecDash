@@ -17,17 +17,13 @@
 </head>
 <body>
     <div class="container-fluid" id="wrap">
-        <header id="header" class="header" role="banner">
-            @if (Request.IsAuthenticated && Session["UserDetails"] != null)
-            {
-                ExecDash.DomainModel.Model.UserCredential profile = (ExecDash.DomainModel.Model.UserCredential)Session["UserDetails"];
-                <div class="welcome">
-                    <div class="line2">
-                        <span class="username">@profile.UserName</span> |
-                        <span class="logout">@Html.ActionLink("Sign Out", "LogOff", "Login")</span>
-                    </div>
+        <header id="header" class="header" role="banner">            
+            <div class="welcome">
+                <div class="line2">
+                    <span class="username">@Session["UserDetails"]</span> |
+                    <span class="logout">@Html.ActionLink("Sign Out", "SignOut", "Home")</span>
                 </div>
-            }
+            </div>
         </header>
 
     </div>

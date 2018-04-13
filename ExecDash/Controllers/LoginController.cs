@@ -49,7 +49,7 @@ namespace ExecDash.Controllers
                 ModelState.AddModelError("ErrorMessage", this.authenticationService.ErrorMessage);
                 return View(credential);
             }
-            Session["UserDetails"] = credential;
+            Session["UserDetails"] = credential.UserName;
 
             UserIdentifierResult authIdentity = this.authenticationService.AuthenticateUser;
 
@@ -66,15 +66,7 @@ namespace ExecDash.Controllers
                 return RedirectPermanent(redirectUrl);
         }
 
-        public ActionResult LogOff()
-        {
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            Response.Cache.SetExpires(DateTime.Now.AddSeconds(-1));
-            Response.Cache.SetNoStore();
 
-            OWINAuthentication.SignOut();
-            return RedirectToAction("Login", "Login");
-        }
 
         private List<Claim> CreateClaims(UserIdentifierResult authIdentity)
         {

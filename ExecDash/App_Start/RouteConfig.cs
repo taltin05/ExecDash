@@ -16,9 +16,9 @@ namespace ExecDash.Web.AppStart
            );
 
             routes.MapRoute(
-                name: "LogOut",
-                url: "home/logout",
-                defaults: new { controller = "home", action = "logout" }
+                name: "SignOut",
+                url: "home/signout",
+                defaults: new { controller = "home", action = "signout" }
             );
 
             routes.MapRoute(
