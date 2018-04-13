@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="@Url.Content("~/")" />
+    <title>Executive Dashboard</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <style>
+        .login {            
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("images/login.jpg")
+        }
+    </style>
+</head>
+<body class="login">
+    <div class="container" style="margin-top:100px">
+        <section>
+            @RenderBody()
+        </section>
+    </div>
+</body>
+
+@RenderSection("scripts", required: false)
+</html>

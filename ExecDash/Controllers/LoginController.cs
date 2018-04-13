@@ -4,6 +4,7 @@ using ExecDash.Services;
 using ExecDash.Services.Interfaces;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Web;
@@ -48,6 +49,7 @@ namespace ExecDash.Controllers
                 ModelState.AddModelError("ErrorMessage", this.authenticationService.ErrorMessage);
                 return View(credential);
             }
+            Session["UserDetails"] = credential;
 
             UserIdentifierResult authIdentity = this.authenticationService.AuthenticateUser;
 
@@ -57,11 +59,21 @@ namespace ExecDash.Controllers
 
             if (string.IsNullOrEmpty(redirectUrl))
             {
-                string returnUrl = Url.Action("Index", "Home", new { username = authIdentity.UserName });
+                string returnUrl = Url.Action("Index", "Home");
                 return RedirectPermanent(returnUrl);
             }
             else
                 return RedirectPermanent(redirectUrl);
+        }
+
+        public ActionResult LogOff()
+        {
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.Now.AddSeconds(-1));
+            Response.Cache.SetNoStore();
+
+            OWINAuthentication.SignOut();
+            return RedirectToAction("Login", "Login");
         }
 
         private List<Claim> CreateClaims(UserIdentifierResult authIdentity)

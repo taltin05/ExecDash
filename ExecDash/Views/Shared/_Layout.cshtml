@@ -8,11 +8,32 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <style>
+        .welcome{
+            clear:right;
+            float:right;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="container-fluid" id="wrap">
+        <header id="header" class="header" role="banner">
+            @if (Request.IsAuthenticated && Session["UserDetails"] != null)
+            {
+                ExecDash.DomainModel.Model.UserCredential profile = (ExecDash.DomainModel.Model.UserCredential)Session["UserDetails"];
+                <div class="welcome">
+                    <div class="line2">
+                        <span class="username">@profile.UserName</span> |
+                        <span class="logout">@Html.ActionLink("Sign Out", "LogOff", "Login")</span>
+                    </div>
+                </div>
+            }
+        </header>
+
     </div>
+    <main class="wrapper" role="main" id="main">
+        @RenderBody()
+    </main>
 </body>
 
 @RenderSection("scripts", required: false)

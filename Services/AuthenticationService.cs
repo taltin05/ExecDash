@@ -9,7 +9,7 @@ namespace ExecDash.Services
         private UserIdentifierResult authUser;
         public UserIdentifierResult AuthenticateUser { get { return this.authUser; } }
 
-        public string ErrorMessage { get { throw new NotImplementedException(); } }
+        public string ErrorMessage { get { return "Not authorized to login.."; } }
 
         public bool IsCredentialAuthenticated(string username, string password)
         {
@@ -22,7 +22,7 @@ namespace ExecDash.Services
                 UserName = "bpandeya"
             };
 
-            return (username.Equals("newUser") && password.Equals("test"));
+            return (username.ToLower().Equals("alban") && password.ToLower().Equals("test"));
 
         }
     }
