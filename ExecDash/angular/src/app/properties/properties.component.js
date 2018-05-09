@@ -10,24 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var mock_properties_1 = require("./mock-properties");
+var property_service_1 = require("../services/property.service");
 var PropertiesComponent = /** @class */ (function () {
-    function PropertiesComponent() {
-        this.properties = mock_properties_1.PROPERTIES;
+    function PropertiesComponent(propertyService) {
+        this.propertyService = propertyService;
     }
     PropertiesComponent.prototype.ngOnInit = function () {
         console.log('app-properties');
+        this.loadProperties();
     };
     PropertiesComponent.prototype.onSelect = function (property) {
         this.selectedProperty = property;
+    };
+    PropertiesComponent.prototype.loadProperties = function () {
+        var _this = this;
+        this.propertyService.getProperties().subscribe(function (data) { return _this.properties = data; });
     };
     PropertiesComponent = __decorate([
         core_1.Component({
             selector: 'app-properties',
             templateUrl: './properties.component.html',
-            styleUrls: ['./properties.component.css']
+            styleUrls: ['./properties.component.css'],
+            providers: [property_service_1.PropertyService]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [property_service_1.PropertyService])
     ], PropertiesComponent);
     return PropertiesComponent;
 }());

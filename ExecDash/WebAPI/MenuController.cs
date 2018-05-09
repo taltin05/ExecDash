@@ -14,9 +14,10 @@ namespace ExecDash.Web.WebAPI
         }
 
         [HttpGet]
-        public IEnumerable<MenuResult> Get(string role)
+        public IEnumerable<MenuResult> Get()
         {
-            return this.reportService.GetMenuByRole(role);            
+            //return this.reportService.GetMenuByRole(role);            
+            return new List<MenuResult>() { };
         }
 
     }

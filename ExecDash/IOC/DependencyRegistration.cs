@@ -2,6 +2,7 @@
 using ExecDash.DataAccess.Core;
 using ExecDash.DataAccess.Infrastructure;
 using ExecDash.DataAccess.Queries.Events.Menu;
+using ExecDash.DataAccess.Queries.Events.Property;
 using ExecDash.DataAccess.Queries.Handlers;
 using ExecDash.DataAccess.Queries.Interfaces;
 using ExecDash.DomainModel.Dto;
@@ -43,7 +44,17 @@ namespace ExecDash.Web.IOC
                 , typeof(MenuQueryHandler)
                 , new InjectionConstructor(container.Resolve<IQueryInvoker>()));
 
+            container.RegisterType(typeof(IQueryHandler<GetAllProperties, IEnumerable<PropertyResult>>)
+                , typeof(PropertyQueryHandler)
+                , new InjectionConstructor(container.Resolve<IQueryInvoker>()));
+
+
             container.RegisterType<IAuthenticationService, AuthenticationService>();
+            container.RegisterType<IMenuService, MenuService>();
+            container.RegisterType<IPropertyService, PropertyService>();
+
+            container.RegisterType<ICommandDispatcher, CommandDispatcher>();
+            container.RegisterType<IQueryDispatcher, QueryDispatcher>();
         }
     }
 }

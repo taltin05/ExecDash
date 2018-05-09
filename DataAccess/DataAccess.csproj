@@ -88,7 +88,9 @@
     <Compile Include="Infrastructure\QueryInvoker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\Events\Menu\GetMenuByRole.cs" />
+    <Compile Include="Queries\Events\Property\GetAllProperties.cs" />
     <Compile Include="Queries\Handlers\MenuQueryHandler.cs" />
+    <Compile Include="Queries\Handlers\PropertyQueryHandler.cs" />
     <Compile Include="Queries\Interfaces\IDbQueryContext.cs" />
     <Compile Include="Queries\Interfaces\IQuery.cs" />
     <Compile Include="Queries\Interfaces\IQueryDispatcher.cs" />

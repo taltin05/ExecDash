@@ -215,6 +215,7 @@
     <Content Include="dist\polyfills.js.map" />
     <Content Include="dist\vendor.bundle.js.map" />
     <Content Include="dist\vendor.js.map" />
+    <None Include="Properties\PublishProfiles\ExecDash20180427114616 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -234,7 +235,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WebAPI\ReportController.cs" />
+    <Compile Include="WebAPI\MenuController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="WebAPI\PropertyController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -299,10 +301,11 @@
     <TypeScriptCompile Include="angular\src\app\common\error-page\error-page.component.ts" />
     <TypeScriptCompile Include="angular\src\app\common\page-not-found\pagenotfound.component.ts" />
     <TypeScriptCompile Include="angular\src\app\property-detail\property-detail.component.ts" />
-    <TypeScriptCompile Include="angular\src\app\properties\property.ts" />
+    <TypeScriptCompile Include="angular\src\app\models\property.ts" />
     <TypeScriptCompile Include="angular\src\app\properties\properties.component.ts" />
     <TypeScriptCompile Include="angular\src\app\properties\mock-properties.ts" />
     <TypeScriptCompile Include="angular\src\app\index\index.component.ts" />
+    <TypeScriptCompile Include="angular\src\app\services\property.service.ts" />
     <TypeScriptCompile Include="angular\src\main.ts" />
     <TypeScriptCompile Include="angular\src\polyfills.ts" />
     <TypeScriptCompile Include="angular\src\vendor.ts" />
